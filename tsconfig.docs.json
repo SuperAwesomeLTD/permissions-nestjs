@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.release.json",
+  "include": ["src/**/*"],
+  "exclude": ["src/**/__tests__/**/*", "examples/**/*"]
+}

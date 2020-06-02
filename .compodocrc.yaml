@@ -1,0 +1,26 @@
+tsconfig: 'tsconfig.docs.json'
+name: 'SuperAwesome Permissions for NestJs (@superawesome/permissions-nestjs)'
+includes: 'src/docs'
+templates: 'src/docs/templates'
+includesName: 'SuperAwesome Permissions for NestJS Documentation'
+assetsFolder: 'src/docs/images'
+theme: 'postmark'
+output: 'dist/docs'
+toggleMenuItems: [
+    'additionalPages',
+    'modules',
+    'components',
+    'directives',
+    'controllers',
+    'classes',
+    'injectables',
+    'guards',
+    'interfaces',
+    'interceptors',
+    'pipes',
+    'miscellaneous',
+]
+disableGraph: true
+disablePrivate: true
+disableInternal: true
+port: 8091
