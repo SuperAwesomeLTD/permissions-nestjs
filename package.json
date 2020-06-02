@@ -1,0 +1,112 @@
+{
+  "name": "@superawesome/permissions-nestjs",
+  "version": "1.0.0",
+  "description": "NestJS Guard & Decorators for @superawesome/permissions, promoting orthogonal fine-grained access control to resources.",
+  "keywords": [
+    "permissions",
+    "@superawesome/permissions",
+    "access control",
+    "role based",
+    "fine grained",
+    "authorization",
+    "attributes",
+    "nestjs",
+    "guard",
+    "decorators"
+  ],
+  "main": "./dist/index.js",
+  "scripts": {
+    "clean": "rimraf coverage dist tmp yml obj api.json docfx.json _site && mkdir dist",
+    "clean:docs": "rimraf dist/docs src/docs/generated && mkdir -p src/docs/generated",
+    "install-example": "npm run build:ts && cd example && npm i && cd ..",
+    "build:ts": "tsc -p tsconfig.release.json",
+    "build:ts:watch": "tsc -w -p tsconfig.release.json",
+    "build": "npm run build:all",
+    "prebuild": "npm-run-all clean:docs clean",
+    "build:all": "npm-run-all build:ts docs:build",
+    "build:all:watch": "npm-run-all --parallel build:ts:watch docs:watch",
+    "docs:build": "npm-run-all clean:docs jest-docs && npx compodoc",
+    "docs:serve": "npm run clean:docs && npm run docs:build -- -s",
+    "docs:watch": "npm run clean:docs & (sleep 8 && npm run jest-docs:watch) & (sleep 12 && npx compodoc -s -w)",
+    "jest-docs": "ts-node example/src/__tests__/document-protected-simple.controller.md.e2e-spec.ts > src/docs/generated/document-protected-simple.controller.generated.md && ts-node example/src/__tests__/document-protected-detailed.controller.md.e2e-spec.ts > src/docs/generated/document-protected-detailed.controller.generated.md",
+    "jest-docs:watch": "nodemon --config nodemon.jest-docs.json --exec npm run jest-docs",
+    "test": "cd ./example && npm run test",
+    "test:watch": "cd ./example && npm run test:watch",
+    "_test": "NODE_ENV=test jest --coverage",
+    "_test:watch": "NODE_ENV=test jest --watchAll",
+    "start": "npm run test:watch",
+    "prettier": "npx prettier --write \"**/*.{ts,js,json}\"",
+    "format": "npm-run-all prettier eslint prettier",
+    "eslint": "npx eslint --fix \"**/*.{js,ts}\"",
+    "eslint-nofail": "npx eslint --fix \"**/*.{js,ts}\" || exit 0",
+    "format-nofail": "npm-run-all prettier eslint-nofail prettier",
+    "lint": "npm run eslint",
+    "lint-nofail": "npm run eslint-nofail"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "peerDependencies": {
+    "@superawesome/permissions": "^1.0.0",
+    "@nestjs/core": "^6.0.0",
+    "@nestjs/common": "^6.0.0"
+  },
+  "devDependencies": {
+    "@compodoc/compodoc": "1.1.10",
+    "@nestjs/common": "^6.11.11",
+    "@nestjs/core": "^6.11.11",
+    "@nestjs/testing": "^6.11.11",
+    "@superawesome/permissions": "^1.0.0",
+    "@types/jest": "^25.2.3",
+    "@types/lodash": "^4.14.154",
+    "@types/node": "^14.0.9",
+    "@types/test-console": "^1.1.0",
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/parser": "^3.1.0",
+    "eslint": "^7.1.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-airbnb-typescript": "^7.2.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.13.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-tsdoc": "^0.2.5",
+    "eslint-plugin-unicorn": "^20.1.0",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "jest-simple-dot-reporter": "^1.0.5",
+    "lint-staged": "^10.2.7",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "2.0.5",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "supertest": "^4.0.2",
+    "test-console": "^1.1.0",
+    "ts-jest": "^26.1.0",
+    "ts-node": "^8.10.2",
+    "tsutils": "~3.17.1",
+    "typescript": "^3.9.3"
+  },
+  "engines": {
+    "node": ">= 8"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "npx prettier --write",
+      "npx eslint --fix",
+      "npx prettier --write"
+    ]
+  },
+  "author": "Angelos Pikoulas",
+  "license": "Apache-2.0",
+  "types": "./dist/"
+}

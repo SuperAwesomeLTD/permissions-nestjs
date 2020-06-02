@@ -1,0 +1,6 @@
+{
+  "ext": "js,ts,map,json",
+  "ignore": ["node_modules/**/*"],
+  "watch": ["./src/**/*", "./example/**/*"],
+  "delay": 500
+}

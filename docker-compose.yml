@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+
+  project-dev:
+    build:
+      context: .
+      target: dev
+      args:
+        NPM_TOKEN: ${NPM_TOKEN}
+    ports:
+      - '8000:8000'
+    volumes:
+      - './src:/srv/src'
+
+  # Used by run-prod.sh & docker-build-prod.sh to locally test ENTRYPOINT ["/entrypoint.sh"], config.js etc
+  project:
+    build:
+      context: .
+      target: build
+      args:
+        NPM_TOKEN: ${NPM_TOKEN}
+
+  project-prod:
+    build:
+      context: .
+      target: prod
+      args:
+        NPM_TOKEN: ${NPM_TOKEN}
+    ports:
+      - '8000:80'

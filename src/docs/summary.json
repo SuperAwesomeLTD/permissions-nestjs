@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Introduction",
+    "file": "introduction.md"
+  },
+  {
+    "title": "How To Use Simple Example",
+    "file": "generated/document-protected-simple.controller.generated.md"
+  },
+  {
+    "title": "Reference & Detailed Example",
+    "file": "generated/document-protected-detailed.controller.generated.md"
+  }
+]
