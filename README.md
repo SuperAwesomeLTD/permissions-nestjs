@@ -4,13 +4,18 @@
 
 ## Contents
 
-The actual generated docs are at `npm run docs:serve` and at [**SuperAwesome Permissions for NestJS Documentation**](https://permissions-nestjs.docs.superawesome.com) (they break on github) on the left at CompoDocs Nav Bar:
+
+The actual generated docs are at `npm run docs:serve` and **coming soon** at [**SuperAwesome Permissions for NestJS Documentation**](https://permissions-nestjs.docs.superawesome.com). Go to the left, at the CompoDocs Nav Bar.
+
+**NOTE: THESE LINKS BREAK ON GITHUB! (^^^ read above ^^^)**
 
 - [Introduction](/additional-documentation/introduction.html)
 
 - [How to use & Simple Example](/additional-documentation/how-to-use-simple-example.html). 
 
 - [Detailed Example & Reference](/additional-documentation/reference-&-detailed-example.html).
+
+**Note**: This is the underlying [SuperAwesome Permissions](https://github.com/SuperAwesomeLTD/permissions) library.
 
 # Versioning
 
