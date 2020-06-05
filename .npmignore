@@ -13,6 +13,10 @@ jest.config.js
 /helm
 /.circleci
 .dockerignore
-
-# /config only used on dev, for sa-common-logger's sake
-/config
+/src
+/.*
+/tsconfig.docs.json
+/additional-documentation/
+/example
+/Dockerfile
+/docker-compose.yml

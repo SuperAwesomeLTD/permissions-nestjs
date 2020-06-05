@@ -22,7 +22,7 @@
     "@nestjs/common": "^6.11.8",
     "@nestjs/core": "^6.11.8",
     "@nestjs/platform-express": "^6.11.8",
-    "@superawesome/permissions": "file:../../permissions",
+    "@superawesome/permissions": "^1.0.2",
     "@superawesome/permissions-nestjs": "file:..",
     "lodash": "^4.17.15",
     "reflect-metadata": "^0.1.13",
