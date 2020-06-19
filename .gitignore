@@ -33,5 +33,6 @@ coverage
 
 # helm dependencies
 helm/charts
+helm/requirements.lock
 
 /src/docs/generated/*

@@ -3,6 +3,7 @@
 
 .idea/
 DRAFT/
+example/node_modules
 
 ### Node ###
 # Logs

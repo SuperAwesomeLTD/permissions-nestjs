@@ -1,0 +1,37 @@
+sa-deployment:
+
+  containers:
+
+    permissions-nestjs:
+      image:
+        name: quay.io/superawesomeltd/permissions-nestjs
+        tag: 1.0.1
+      env: {}
+      ports:
+      - name: http
+        containerPort: 80
+        servicePort: 80
+        type: ClusterIP
+      readinessProbe:
+        httpGet:
+          path: /
+          port: 80
+        initialDelaySeconds: 3
+        periodSeconds: 5
+        successThreshold: 1
+        failureThreshold: 1
+      livenessProbe:
+        httpGet:
+          path: /
+          port: 80
+        initialDelaySeconds: 60
+        periodSeconds: 5
+        failureThreshold: 3
+
+      resources:
+        requests:
+          cpu: 0.1
+          memory: 128Mi
+        limits:
+          cpu: 0.1
+          memory: 512Mi
