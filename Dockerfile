@@ -1,9 +1,6 @@
-FROM node:12.14 AS dev
+FROM node:12.16 AS dev
 
 WORKDIR /srv
-
-ARG NPM_TOKEN
-RUN echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
 
 ADD package.json ./
 ADD package-lock.json ./
@@ -16,7 +13,6 @@ RUN npm run build:ts
 
 # install example deps, which also link ref this library
 WORKDIR example
-RUN echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
 RUN npm install
 WORKDIR /srv
 
