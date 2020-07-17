@@ -4,7 +4,7 @@ sa-deployment:
 
     permissions-nestjs:
       image:
-        name: quay.io/superawesomeltd/permissions-nestjs
+        name: superawesomeltd/permissions-nestjs
         tag: 1.0.1
       env: {}
       ports:
