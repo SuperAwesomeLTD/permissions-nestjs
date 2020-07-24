@@ -27,7 +27,7 @@
     "lodash": "^4.17.15",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
-    "rxjs": "^6.5.4"
+    "rxjs": "^6.6.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^6.14.2",
