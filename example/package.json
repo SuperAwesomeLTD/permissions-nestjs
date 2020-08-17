@@ -24,7 +24,7 @@
     "@nestjs/platform-express": "^6.11.8",
     "@superawesome/permissions": "^1.0.2",
     "@superawesome/permissions-nestjs": "file:..",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.20",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.4"
