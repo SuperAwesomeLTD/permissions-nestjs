@@ -1,4 +1,8 @@
 name: permissions-nestjs
-version: 1.0.2
+version: 1.0.3
 description: permissions-nestjs
 details: permissions-nestjs
+dependencies:
+- name: sa-deployment
+  version: 0.16.5
+  repository: '@superawesome'
